@@ -1,0 +1,197 @@
+a, div {
+    text-decoration: none;
+}
+
+.Main-Layout {
+    background-color: white;
+}
+
+/* 검색 결과 상단 부분 */
+.SearchPage-Wrapper {
+    background: rgb(255, 255, 255);
+    padding: 0px 0px 40px;
+    border-bottom: 1px solid rgb(245, 245, 245);
+
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+    color: #3d3d3d;
+}
+
+.SearchPage-Container {
+    display: flex;
+    width: 100%;
+}
+
+.SearchPage-InnerWrapper {
+    display: flex;
+    width: 100%;
+    margin: 0px auto;
+    max-width: 1158px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 40px 0px 0px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.SearchPage-SearchResult {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.SearchPage-SearchRelation {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0px;
+}
+
+.SearchRelation-Label {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 120%;
+    color: rgb(28, 28, 28);
+}
+
+.SearchRelation-ChipList {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex: 1 1 0%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+}
+
+.SearchRelation-Chip {
+    outline: 0;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 120%;
+    background-color: rgb(248, 248, 248);
+    color: rgb(84, 84, 84);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+.SearchRelation-Chip:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+/* 검색 결과 필터 부분 */
+.SearchPage-FilterWrapper {
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.SearchPage-FilterContainer {
+    height: 100%;
+    display: flex;
+    position: relative;
+    margin: 0px auto;
+    width: 1160px;
+    align-items: center;
+    padding: 0px 6px 0px 0px !important;
+}
+
+.Filter-Layout {
+    margin-top: 24px;
+    width: 100%;
+    position: relative;
+    z-index: 99;
+}
+
+.Filter-OptionWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto hidden;
+}
+
+.Filter-OptionContainer {
+    display: flex;
+    padding-left: 0px;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.Filter-Option.Button {
+    display: flex;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+    height: 36px;
+    padding: 9.5px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid rgb(228, 228, 228);
+    color: rgb(28, 28, 28);  
+}
+
+.OptionButton-Content {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+.Option-DropDown {
+    position: relative;
+}
+
+.Option-Trigger {
+    cursor: pointer;
+}
+
+.Trigger-Button {
+    display: flex;
+    height: 36px;
+    padding: 9.5px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid rgb(228, 228, 228);
+    color: rgb(28, 28, 28);
+    outline: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+}
+
+.Trigger-Text {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+.Trigger-Arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Trigger-Arrow svg {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+}

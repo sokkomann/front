@@ -3,10 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/search.css">
 </head>
 <body>
-    <main>
-        
+    <main class="Main-Layout">
+        <div class="SearchPage-Wrapper">
+            <div class="SearchPage-Container">
+                <!-- 검색 결과 Title 부분 -->
+                <div class="SearchPage-InnerWrapper">
+                    <!-- js 로 검색어 가져와서 표시하기 -->
+                    <p class="SearchPage-SearchResult">"검색어" 검색 결과</p>
+                    <div class="SearchPage-SearchRelation">
+                        <div class="SearchRelation-Label">연관</div>
+                        <div class="SearchRelation-ChipList">
+                            <!-- 연관되는 검색어들 button으로 불러오기 -->
+                            <!---------->
+                            <button class="SearchRelation-Chip">연관검색어1</button>
+                            <button class="SearchRelation-Chip">연관검색어2</button>
+                            <button class="SearchRelation-Chip">연관검색어3</button>
+                            <button class="SearchRelation-Chip">연관검색어4</button>
+                            <!---------->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 검색 결과 필터 부분 -->
+            <div class="SearchPage-FilterWrapper">
+                <div class="SearchPage-FilterContainer">
+                    <div class="Filter-Layout">
+                        <div class="Filter-OptionWrapper">
+                            <div class="Filter-OptionContainer">
+                                <!-- 해당 버튼 누르면 '떨이 상품'만 정렬하게 -->
+                                <button type="button" class="Filter-Option Button">
+                                    <div class="OptionButton-Content">
+                                        <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.38779 2.30425C4.55294 1.68264 5.44706 1.68264 5.61221 2.30425C6.12816 4.24621 7.38997 5.93973 9.11463 6.97073C9.51494 7.21003 9.51494 7.78997 9.11463 8.02927C7.38997 9.06027 6.12816 10.7538 5.61221 12.6958C5.44706 13.3174 4.55294 13.3174 4.38779 12.6958C3.87184 10.7538 2.61003 9.06027 0.885371 8.02927C0.485057 7.78997 0.485057 7.21003 0.885371 6.97073C2.61003 5.93973 3.87184 4.24621 4.38779 2.30425Z" fill="url(#paint0_linear_303_99400)"></path><defs><linearGradient id="paint0_linear_303_99400" x1="1.66667" y1="7.5" x2="9.16667" y2="7.5" gradientUnits="userSpaceOnUse"><stop stop-color="#A253DE"></stop><stop offset="1" stop-color="#FF7373"></stop></linearGradient></defs></svg>
+                                        <span>임박 마감</span>
+                                    </div>
+                                </button>
+
+                                <!-- 지역 선택 드롭다운 -->
+                                <div class="Option-DropDown">
+                                    <div class="Option-Trigger">
+                                        <button type="button" class="Trigger-Button">
+                                            <div class="Trigger-Text">
+                                                지역 선택
+                                            </div>
+                                            <!-- 해당 svg 누르면 180도 회전 해야함  -->
+                                            <div class="Trigger-Arrow">
+                                                <svg class="Chip__ArrowDownIcon-sc-ounpx6-1 frXSZc" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99967 11.3335L2.66634 6.33353L3.73306 5.33349L7.99967 9.33342L12.2663 5.3335L13.333 6.33353L7.99967 11.3335Z" fill="#6D6D6D"></path></svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- 지역이 선택되면 표시 및 해당 지역 장터 가져오기 -->
+                                <!-- 선택 지역 장터 선택 드롭다운 -->
+                                <div class="Option-DropDown">
+
+                                </div>
+
+                                <!-- 상품 대분류 카테고리 드롭다운 -->
+                                <div class="Option-DropDown">
+
+                                </div>
+
+                                <!-- 대 분류 카테고리가 선택되면 표시 및 해당 분류의 소분류 가져오기 -->
+                                <!-- 상품 소분류 카테고리 드롭다운 -->
+                                <div class="Option-DropDown">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
+<script src="../../static/js/search.js"></script>
 </html>
