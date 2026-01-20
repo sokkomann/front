@@ -1,5 +1,15 @@
 @charset "utf-8";
 
+@keyframes popUp {
+    from {scale: 0;}
+    to {scale: 1;}
+}
+
+@keyframes popDown {
+    from {scale: 1;}
+    to {scale: 0;}
+}
+
 @font-face {
     font-family: "Pretendard";
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
@@ -68,15 +78,7 @@
     src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css') format('font-woff2');
 }
 
-@keyframes popUp {
-    from {scale: 0;}
-    to {scale: 1;}
-}
 
-@keyframes popDown {
-    from {scale: 1;}
-    to {scale: 0;}
-}
 
 html {
     scrollbar-gutter: stable;
@@ -413,7 +415,20 @@ button {
     height: 40px;
     bottom: 2px;
     right: 2px;
-    z-index: 99;
+    z-index: 100;
+}
+
+/* 찜 하트 토글 */
+.like-button .red-heart {
+    display: none;
+}
+
+.like-button.liked .black-heart {
+    display: none;
+}
+
+.like-button.liked .red-heart {
+    display: block;
 }
 
 .card-info {
@@ -508,7 +523,7 @@ div.modal {
     background-color: #8586898a;
 }
 
-div.warn-modal {
+div.like-modal {
     box-sizing: border-box;
     position: unset;
     width: 288px;
@@ -516,9 +531,6 @@ div.warn-modal {
     background: rgb(255, 255, 255);
     box-shadow: rgb(33 35 41 / 12%) 0px 2px 12px;
     border-radius: 8px;
-}
-
-div.warn-modal {
     padding: 24px;
 }
 
