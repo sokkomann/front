@@ -253,7 +253,7 @@ button[name=c-category] {
 }
 
 /* 검색 결과 상품 목록 부분 */
-.SearchPage-SearchResult {
+.SearchResult-Wrapper {
     position: relative;
     width: 1160px;
     height: auto;
@@ -281,10 +281,12 @@ button[name=c-category] {
 
 .InfinityScroll-ResultItemList {
     display: flex;
+    flex-wrap: wrap;
     width: auto;
     justify-content: flex-start;
     margin: 0px -10px;
     padding: 0px;
+
 }
 
 /* 검색 결과 상품 카드 부분 */
@@ -330,4 +332,119 @@ button[name=c-category] {
     object-fit: cover;
     transition: 0.2s ease-in-out;
     max-width: 100%;
+}
+
+.ItemCard-Content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    margin-top: 12px;
+    margin-left: 0px;
+    padding: 0px 4px;
+}
+
+.ItemCard-ItemInfo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    flex-grow: 1;
+}
+
+.ItemCard-MainContent {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    align-items: center;
+    text-align: center;
+}
+
+.ItemCard-MarketInfo {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 120%;
+    color: rgb(84, 84, 84);
+}
+
+.ItemCard-SellerInfo {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 120%;
+    color: rgb(100, 100, 100);
+}
+
+.ItemCard-InfoWrapper {
+    min-height: 80px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ItemCard-Title {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 120%;
+    color: rgb(28, 28, 28);
+    margin-bottom: 6px;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ItemCard-Description {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 150%;
+    color: rgb(109, 109, 109);
+    display: flex;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ItemCard-PriceInfo {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 87, 87);
+}
+
+.ItemCard-UnderBar {
+    width: 100%;
+    height: 3px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background-color: rgb(255, 87, 87);
+}
+
+/* 뱃지 관련 */
+.ItemCard-BadgeWrapper {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    height: 18px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+.Info-badge {
+    color: rgb(84, 84, 84);
+    background-color: rgb(240, 240, 240);
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 120%;
+    height: 18px;
+    white-space: nowrap;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 4px;
+    border-radius: 2px;
+}
+
+.delivery {
+    color: rgb(255, 255, 255);
+    background-color: rgb(121, 136, 255);
 }

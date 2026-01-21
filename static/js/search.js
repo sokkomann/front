@@ -63,7 +63,32 @@ dropDownBtns.forEach((button, i) => {
     });
 });
 
-// 드롭다운 svg 회전
+// ----- 찜 버튼 부분 ------------------------
+// 찜 버튼
+const likeButtons = document.querySelectorAll(".like-Button");
+
+// 찜 버튼 누르기 기능
+likeButtons.forEach((like) => {
+    like.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        e.currentTarget.classList.toggle("is-active");
+
+        // DB에서 찜 관련 값 받아와야 함.
+        const isLiked = e.currentTarget.classList.contains("is-active");
+
+        // 찜 추가 / 해제 로직
+        if (!isLiked) {
+            // 찜 추가 로직 넣어야 함
+        } else {
+            // 찜 해제 로직 넣어야 함
+        }
+    });
+});
+// -----------------------------------------
 
 // 페이지를 클릭, 스크롤 하면 드롭다운 비활성화
 document.addEventListener("scroll", (e) => {});
+
+// --------------------------------------
+// 검색 결과 상품 가져오기
