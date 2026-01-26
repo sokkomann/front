@@ -39,11 +39,25 @@ const slide = (index) => {
 
 // 오른쪽 버튼 클릭
 rightBtn.addEventListener("click", (e) => {
-    const leftCards = totalCards - (nowCardIndex + 5);
-    
+    const restCards = totalCards - (nowCardIndex + 5);
+    if(restCards >= 5) {
+        willMove = 5;
+    } else {
+        willMove = restCards;
+    }
+    nowCardIndex += willMove;
+    slide(nowCardIndex);
+    checkButtons();
 });
 
 // 왼쪽 버튼 클릭
 leftBtn.addEventListener("click", (e) => {
-    
+    if(nowCardIndex >= 5) {
+        willMove = 5;
+    } else {
+        willMove = nowCardIndex;
+    }
+    nowCardIndex -= willMove;
+    slide(nowCardIndex);
+    checkButtons();
 });

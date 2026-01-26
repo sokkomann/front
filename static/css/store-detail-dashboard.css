@@ -578,15 +578,6 @@ svg {
     transition: all 0.2s 0s;
 }
 
-.like-button {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    bottom: 2px;
-    right: 2px;
-    z-index: 100;
-}
-
 /* 찜 하트 토글 */
 .like-button .red-heart {
     display: none;
