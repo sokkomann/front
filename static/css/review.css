@@ -89,8 +89,11 @@
     color: rgb(158, 158, 158);
 }
 
-.ReviewDetail-BodyContainer {
-    cursor: pointer;
+.ReviewDetail-Paragraph {
+    margin: 12px 0px;
+    color: rgb(84, 84, 84);
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .ReviewDetail-KeyWordContainer {
@@ -148,6 +151,9 @@
 /* 후기를 남긴 상품 부분 */
 .ReviewDetail-FooterContainer {
     margin-top: 12px;
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 12px;
+    padding: 10px;
 }
 
 .ReviewDetail-ItemLink {

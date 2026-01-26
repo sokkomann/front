@@ -472,12 +472,12 @@ button[name=c-category] {
     color: white;
 }
 
-.Cancle {
+.Cancel {
     border: 1px solid rgb(255, 87, 87);
     color: rgb(255, 87, 87);
 }
 
-.Cancle:hover {
+.Cancel:hover {
     background-color: rgb(255, 87, 87);
     color: white;
 }

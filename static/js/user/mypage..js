@@ -29,11 +29,29 @@ document.addEventListener("DOMContentLoaded", (e) => {
         emptyContentDiv,
     ];
 
+    // 모든 페이지 일단 비활성화
+    allSection.forEach((section) => section.classList.add("off"));
+
     // 받아온 리뷰 값
     let reviews = true;
     let likeItems = true;
     let pendingItems = true;
     let completeItems = true;
+
+    // 각각의 상품들이 없을 경우, 빈 목록 페이지 표시
+    if (!likeItems) {
+        if (!likeItemDiv.classList.contains("off")) {
+            emptyContentDiv.classList.remove("off");
+        }
+    } else if (!pendingItems) {
+        if (!pendingItemDiv.classList.contains("off")) {
+            emptyContentDiv.classList.remove("off");
+        }
+    } else if (!completeItems) {
+        if (!completeItemDiv.classList.contains("off")) {
+            emptyContentDiv.classList.remove("off");
+        }
+    }
 
     const moveUnderBar = (element) => {
         const left = element.offsetLeft;
@@ -46,6 +64,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         moveUnderBar(currnetSpan);
     }
 
+    // --------------------------------------------------------------------------
     // 메뉴를 누를 시, 해당 페이지를 표시.
     menus.forEach((menu, i) => {
         menu.addEventListener("click", (e) => {
@@ -102,6 +121,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const prevBtn = reviewPagination.firstElementChild;
     const nextBtn = reviewPagination.lastElementChild;
 
+    // --------------------------------------------------------------------------
     // 페이지 버튼을 누르면 해당 페이지로 스타일 변경
     reviewCurrentPage.forEach((current) => {
         current.addEventListener("click", (e) => {
@@ -112,9 +132,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
         });
     });
 
+    // --------------------------------------------------------------------------
     // 찜한 상품의 찜 버튼 누르면 해제시키기
-    const likeItemList = document.querySelectorAll(
-        ".LikeItems-ItemCardWrapper",
+    const likeItemList = likeItemDiv.querySelectorAll(
+        ".ContentItems-ItemCardWrapper",
     );
     const likeItemButtons = document.querySelectorAll(".like-Button");
     const modal = document.querySelector(".Modal-Container");
@@ -127,10 +148,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
             modal.innerHTML = "해당 상품의 찜을 해제했습니다.";
             modal.classList.add("show");
 
-            // 2. 3초 후에 서서히 사라지게 하기
             setTimeout(() => {
                 modal.classList.remove("show");
-            }, 3000); // 3000ms = 3초
+            }, 3000);
         });
     });
 
@@ -143,12 +163,87 @@ document.addEventListener("DOMContentLoaded", (e) => {
         });
     });
 
-    // 로딩되면 프로필을 표시
+    // --------------------------------------------------------------------------
+    // 결제 중인 상품 결제 취소 버튼 기능
+    const pendingCancelModal = document.querySelector(
+        ".PurchaseCancel-ModalLayer",
+    );
+    const pendelModalBackground = document.querySelector(
+        ".PurchaseCancel-ModalWrapper",
+    );
+    const cancelButtons = document.querySelectorAll(".ItemCard-Button.Cancel");
+
+    // 결제 취소 모달
+    const backBtn = pendingCancelModal.querySelector(".Modal-Close");
+    const cancelBtn = pendingCancelModal.querySelector(".Modal-Cancel");
+
+    let targetItemCard = null;
+
+    cancelButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            targetItemCard = button.closest(".ContentItems-ItemCardWrapper");
+            pendingCancelModal.classList.remove("off");
+        });
+    });
+
+    backBtn.addEventListener("click", (e) => {
+        pendingCancelModal.classList.add("off");
+        targetItemCard = null;
+    });
+
+    cancelBtn.addEventListener("click", (e) => {
+        if (targetItemCard) {
+            targetItemCard.remove();
+
+            pendingCancelModal.classList.add("off");
+
+            modal.innerHTML = "해당 상품의 결제가 취소되었습니다.";
+            modal.classList.add("show");
+
+            setTimeout(() => {
+                modal.classList.remove("show");
+            }, 3000);
+
+            targetItemCard = null;
+        }
+    });
+
+    // 모달 밖을 눌러도 모달 창 닫기
+    pendelModalBackground.addEventListener("click", (e) => {
+        e.preventDefault();
+        pendingCancelModal.classList.add("off");
+    });
+
+    // --------------------------------------------------------------------------
+    // 결제 완료 상품에서 후기가 있으면 후기 조회, 후기가 없으면 작성 페이지로 이동
+    const completeItemList = completeItemDiv.querySelectorAll(
+        ".ContentItems-ItemCardWrapper",
+    );
+
+    // 여기서 각 상품마다 후기가 있는지 검사해서 버튼이 달라보이게 해야함.
+    completeItemList.forEach((item) => {
+        const completeItemBtns = item.querySelector(".ItemCard-ButtonWrapper");
+        const reviewWrite = completeItemBtns.firstElementChild;
+        const reviewDetail = completeItemBtns.lastElementChild;
+
+        if (reviews) {
+            reviewWrite.classList.add("off");
+            reviewDetail.classList.remove("off");
+        }
+
+        reviewWrite.addEventListener("click", (e) => {
+            // 리뷰 작성 페이지로 이동
+        });
+
+        reviewDetail.addEventListener("click", (e) => {
+            // 리뷰 조회 페이지로 이동
+        });
+    });
+    // 로딩되면 프로필을 기본적으로 활성화
     document.querySelector('.Navigation-Span[name="profile"]')?.click();
 });
-
-// 마이페이지 결제 중 상품 결제 취소 모달
-// TODO
 
 // 리뷰 가져와서 뿌리기
 const fetchReivews = (reviews) => {};
