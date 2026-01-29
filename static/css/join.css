@@ -198,7 +198,7 @@
 }
 
 .AccountSwitchPrompt__Wrapper{
-display: flex;
+    display: flex;
     -webkit-box-pack: center;
     justify-content: center;
     flex-direction: row;
@@ -206,17 +206,15 @@ display: flex;
     align-items: center;
     gap: 16px;
     color: rgb(28, 28, 28);
-    }
+}
 
-    .PlainNavLink__Wrapper{
-            font-size: 13px;
+.PlainNavLink__Wrapper{
+    font-size: 13px;
     font-weight: normal;
     line-height: 120%;
-    }
-
-   .PlainNavLink__Wrapper > a {
     color: rgb(61, 61, 61);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .AccountSwitchPrompt__MenuDivider{
