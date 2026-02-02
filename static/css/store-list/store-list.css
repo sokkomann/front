@@ -287,7 +287,7 @@ button {
     scrollbar-width: none;
 }
 /* 이름짓기 */
-.filter-btn {
+.filter-magam-btn {
     font-size: 14px;
     font-weight: normal;
     line-height: 120%;
@@ -695,7 +695,7 @@ button {
     border: 1px solid #e4e4e4;
 }
 
-.category-each-box.selected, .dropdown-market.selected, .filter-btn.selected {
+.category-each-box.selected, .dropdown-market.selected, .filter-magam-btn.selected {
     background-color: blanchedalmond;
     border-color: blanchedalmond;
     font-weight: 600;

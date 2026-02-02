@@ -20,6 +20,8 @@ const onlyPhotoInput = document.querySelector(".ckbox-reviewtab")
 const onlyPhoto = document.querySelector(".only-photo");
 const photoReview = document.querySelector(".photo-review-count");
 
+const magamBtn = document.querySelector(".filter-magam-btn");
+
 // 1. 프로필/판매상품/리뷰 탭 눌렀을때 이벤트
 portals.forEach((portal, i) => {
     portal.addEventListener("click", (e) => {
@@ -181,4 +183,11 @@ onlyPhotoInput.addEventListener("change", (e) => {
         onlyPhoto.classList.remove("checked");
         photoReview.style.display = "none";
     }
+});
+
+// 7. 떨이상품버튼
+magamBtn.addEventListener("click", (e) => {
+    let condition = magamBtn.classList.contains("clicked");
+
+    magamBtn.classList.toggle("clicked", !condition);
 });
