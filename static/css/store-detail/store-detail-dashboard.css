@@ -415,13 +415,11 @@ svg {
 }
 
 .description-wrapper {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: block;
+    white-space: pre-wrap;
 }
 
-.show-more-btn {
+/* .show-more-btn {
     background: none;
     border: none;
     color: rgb(158, 158, 158);
@@ -430,12 +428,12 @@ svg {
     font-weight: 700;
     line-height: 22px;
     padding: 0px;
-    /* white-space: nowrap; */
+    white-space: nowrap;
     display: inline-block;
     margin-top: 4px;
-}
+} */
 
-.social-link {
+/* .social-link {
     padding: 0px 0px 20px;
 }
 
@@ -459,9 +457,9 @@ svg {
     color: rgb(61, 61, 61);
     font-size: 12px !important;
     line-height: 20px !important;
-}
+} */
 
-.svg-icon {
+/* .svg-icon {
     margin: 0px 4px 0px 0px;
     font-size: 16px;
     display: inline-flex;
@@ -472,7 +470,7 @@ svg {
 .svg-icon svg {
     width: 1em;
     height: 1em;
-}
+} */
 
 .products-container {
     padding: 32px 0px;
@@ -741,7 +739,9 @@ svg {
 }
 
 .simple-reviews-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .simple-header-wrap {
@@ -1164,6 +1164,40 @@ svg {
 
 
 /* 여기부터 판매상품 눌렀을때 스타일 */
+
+.filter-magam-btn {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 120%;
+    display: flex;
+    height: 36px;
+    padding: 9.5px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid rgb(228, 228, 228);
+    color: rgb(28, 28, 28);
+}
+
+.filter-magam-btn:hover {
+    background-color: #FFB74D !important;
+    border-color: #FFB74D !important;
+}
+
+.filter-magam-btn.clicked {
+    background-color: #FFB74D;
+    border-color: #FFB74D;
+}
+
+.svg-inmedia {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
+}
+
 .products-list-container {
     color: rgb(51, 51, 51);
 }

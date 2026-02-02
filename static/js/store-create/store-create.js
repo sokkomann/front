@@ -29,9 +29,11 @@ const uploadBtn = document.querySelector(".upload-btn");
 const registrationButtons = document.querySelectorAll(".registration-button");
 
 // 6. 사진등록하는 이벤트
-const input = document.getElementById("imageUpload");
+const imageInput = document.getElementById("imageUpload");
 const thumbnail = document.querySelector(".profile-image-uploaded");
 
+// 7. 다 쓰고나서 화면 우측 상단에 입점신청
+const finalRegiBtn = document.querySelector(".market-application-btn");
 
 
 
@@ -70,6 +72,7 @@ marketInputs.forEach((marketInput, i) => {
                 giveWrongStyle(marketInputForm[i], marketInputMessage[i], marketInputLength[i]);
             }
         }
+        console.log(marketInput.value);
     });
     // 1-2. 상점명 입력/소개 입력 이벤트
     // 인풋태그 벗어나면 테두리 변화
@@ -199,7 +202,7 @@ function clickChangeColor(button) {
 }
 
 // 6. 사진 등록하기
-input.addEventListener("change", (e) => {
+imageInput.addEventListener("change", (e) => {
     const [file] = e.target.files;
     const reader = new FileReader();
 
@@ -211,4 +214,17 @@ input.addEventListener("change", (e) => {
                 thumbnail.style.backgroundImage = `url(${path})`;
             }
         });
+});
+
+// 7. 입력, 등록란들이랑 본인인증 다 끝내기 전,후 알러트
+finalRegiBtn.addEventListener("click", (e) => {
+    if(marketInputs[0].value && marketInputs[1].value.length >= 10 
+        && thumbnail.style[`background-image`]
+        && regionSpans[1].classList.contains("selected") 
+        && categorySpan.classList.contains("selected")
+        && startCheck.classList.contains("disabled")) {
+        alert("입점 신청을 하였습니다.");
+    } else {
+        alert("본인인증 완료 혹은 항목을 모두 채워주세요.");
+    }
 });

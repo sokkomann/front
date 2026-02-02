@@ -68,7 +68,7 @@ optionCards.forEach((card) => {
             thisPrice.innerHTML = optionPrice * thisInput.value + "원";
             updateTotalPrice();
             return;
-            // 리턴안하면 밑으로가서 박스 새로 생성하니까 탈출시키기
+            // 밑으로가서 박스 새로 이어서 생성하는거 방지로 탈출시키기
         }
 
         // 위에 if문 수행 안하고 일로 왔으면 새로왔거나
